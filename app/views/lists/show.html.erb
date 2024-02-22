@@ -1,9 +1,26 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.imge_url %>');">
+<div class="show"><div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.image_url %>');">
   <div class="container">
-    <h1><h1><%= @list.name %></h1>
+    <h1><%= @list.name %></h1>
+    <p><%= @bookmarks.length %> movies</p>
   </div>
 </div>
-<div class="container p-3">
-<% @bookmarks.each do |bookmark| %>
-<%= bookmark.movie.title %>
+<div class="container p-3 d-flex">
+<% @bookmarks.each do |bookmark| %>
+<div class="card m-1">
+<div style="background-image:url('<%= bookmark.movie.poster_url %>')" class="card-img"><h4 class="card-title"><%= bookmark.movie.title %></h4><h6><%= bookmark.movie.rating %></h6></div>
+  <div class="card-body">
+    <p class="card-text"><%= bookmark.movie.overview %></p>
+    <p style="font-weight: 700"><%= bookmark.comment %></p>
+  </div>
+  </div>
 <% end %></div>
+
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <%= f.input :comment %>
+    <%= f.input :movie_id, as: :select, collection: Movie.all %>
+    <%= f.submit "Submit list", class: "btn btn-primary" %>
+    <% end %>
+</div>
