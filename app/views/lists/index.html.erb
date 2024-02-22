@@ -1,0 +1,14 @@
+<div class="container p-3"><h1>All lists</h1>
+
+<div class="container d-flex"><% @lists.each do |list| %>
+<div class="card m-1" style="width: 18rem;">
+<div style="background-image:url('<%= list.image_url %>')" class="card-img"><h4 class="card-title"><%= list.name %></h5></div>
+  <div class="card-body">
+    <p class="card-text"><%= list.bookmarks.length %> movies</p>
+    <div class="d-flex justify-content-between"><%= link_to "See all", list_path(list), class: "btn btn-success" %>
+    <%= link_to "Delete", list_path(list), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "are you sure ?"} %></div>
+  </div>
+  </div>
+<% end %></div>
+
+</div>

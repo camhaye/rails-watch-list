@@ -1,0 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.imge_url %>');">
+  <div class="container">
+    <h1><h1><%= @list.name %></h1>
+  </div>
+</div>
+<div class="container p-3">
+<% @bookmarks.each do |bookmark| %>
+<%= bookmark.movie.title %>
+<% end %></div>
