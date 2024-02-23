@@ -1,12 +1,18 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
   background: white;
-}
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color:#ffd19c;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  a {
+    color: white;
+    font-size: larger;
+    text-transform: lowercase;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px $red;
+  }
 }
