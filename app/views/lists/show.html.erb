@@ -13,8 +13,8 @@
     <p style="font-weight: 700"><%= bookmark.comment %></p>
   </div>
   </div>
-<% end %>
-
+<% end %></div>
+<div class="container p-3">
     <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
