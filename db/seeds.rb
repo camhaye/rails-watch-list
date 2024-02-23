@@ -23,5 +23,5 @@ all.each do |movie|
     poster_url: "https://image.tmdb.org/t/p/w500#{movie["poster_path"]}",
     rating: movie["vote_average"]
   )
-movie.save
+  movie.save
 end

@@ -1,3 +1,12 @@
+.index {.card-img {height: 150px;
+}
+}
+
+.card {
+  border-radius: 10px;
+width: 25%;
+padding: 5px}
+
 .card-img {height: 150px;
   background-size: 100%;
   display: flex;
@@ -6,7 +15,8 @@
   align-items: center;
   color: #ffffff;
 flex-direction: column;
-transition-duration: 1s;}
+transition-duration: 1s;
+border-radius: 5px;}
 
 .card-img:hover {background-size: 150%;
 filter: grayscale(1);
@@ -21,7 +31,9 @@ text-shadow: 1px 1px #000000;}
 
 .show {
   .card {width: 33%;
-    border-radius: 5px;
-    border: 5px solid #e1e1e1;
+    outline: 5px solid #eaeaea;
+    padding: 5px
   }
+  .card-img {border-radius: 5px;
+  height:200px}
 }

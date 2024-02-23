@@ -1,11 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://media.gqmagazine.fr/photos/603e6a8da9360b0585bcbc6a/16:9/w_2560%2Cc_limit/108387402');">
+<div class="index"><div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://media.gqmagazine.fr/photos/603e6a8da9360b0585bcbc6a/16:9/w_2560%2Cc_limit/108387402');">
   <div class="container">
     <h1><h1>One movie a day keeps the doctor away</h1>
   </div>
 </div>
 <div class="container d-flex"><% @lists.each do |list| %>
-<div class="card m-1" style="width: 350px">
-<div style="background-image:url('<%= list.image_url %>')" class="card-img"><h4 class="card-title"><%= list.name %></h5></div>
+<div class="card m-1">
+<div style="background-image:url('<%= list.image_url %>')" class="card-img"><h3 class="card-title"><%= list.name %></h3></div>
   <div class="card-body">
     <p class="card-text"><%= list.bookmarks.length %> movies</p>
     <div class="d-flex justify-content-between"><%= link_to "See all", list_path(list), class: "btn btn-success" %>
